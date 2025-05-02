@@ -22,6 +22,7 @@ class GameController:
         """
         self.size = size
         self.board = self._create_empty_board()
+        self.current_turn = 'white'  # White always moves first
 
     def _create_empty_board(self):
         """
@@ -128,6 +129,11 @@ class GameController:
             # Get the piece
             piece = self.board[from_row][from_col]
 
+            # Check if it's the correct player's turn
+            if piece.color != self.current_turn:
+                print(f"It's {self.current_turn}'s turn to move, not {piece.color}'s.")
+                return False
+
             # Check if the move is valid according to chess rules
             is_valid, explanation = piece.is_valid_move(self.board, from_row, from_col, to_row, to_col)
 
@@ -144,6 +150,9 @@ class GameController:
                 self.board[from_row][from_col] = '□'  # White square
             else:
                 self.board[from_row][from_col] = '■'  # Black square
+
+            # Toggle the turn
+            self.current_turn = 'black' if self.current_turn == 'white' else 'white'
 
             return True
 

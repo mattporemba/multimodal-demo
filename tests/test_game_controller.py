@@ -98,6 +98,44 @@ class TestGameController(unittest.TestCase):
         self.assertFalse(game.move_piece('i1', 'a3'))
         self.assertFalse(game.move_piece('a1', 'a9'))
 
+    def test_turn_based_movement(self):
+        """Test that turns alternate correctly between white and black."""
+        game = GameController()
+        game.setup_pieces()
+
+        # Verify white moves first
+        self.assertEqual(game.current_turn, 'white')
+
+        # White's move (should succeed)
+        self.assertTrue(game.move_piece('a2', 'a4'))
+
+        # Verify turn switched to black
+        self.assertEqual(game.current_turn, 'black')
+
+        # Black's move (should succeed)
+        self.assertTrue(game.move_piece('a7', 'a5'))
+
+        # Verify turn switched back to white
+        self.assertEqual(game.current_turn, 'white')
+
+        # White tries to move black piece (should fail)
+        self.assertFalse(game.move_piece('b7', 'b5'))
+
+        # Verify turn still white
+        self.assertEqual(game.current_turn, 'white')
+
+        # White's move (should succeed)
+        self.assertTrue(game.move_piece('b2', 'b4'))
+
+        # Verify turn switched to black
+        self.assertEqual(game.current_turn, 'black')
+
+        # Black tries to move white piece (should fail)
+        self.assertFalse(game.move_piece('c2', 'c4'))
+
+        # Verify turn still black
+        self.assertEqual(game.current_turn, 'black')
+
 
 if __name__ == '__main__':
     unittest.main()
