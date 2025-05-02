@@ -64,9 +64,17 @@ For example:
 - To move a pawn from a2 to a4, enter: `a2 a4`
 - To move a knight from b1 to c3, enter: `b1 c3`
 
-The positions use standard chess notation:
+The positions use standard chess notation (algebraic notation):
 - Columns are labeled a through h (from left to right)
 - Rows are numbered 1 through 8 (from bottom to top)
+
+![Algebraic Chess Notation](images/algebraic_notation_chess.png)
+
+In algebraic notation:
+1. Each square has a unique coordinate combining a letter (a-h) and a number (1-8)
+2. White pieces start on rows 1-2, black pieces on rows 7-8
+3. To move a piece, simply specify the starting square followed by the destination square
+4. For example, moving from e2 to e4 would be entered as: `e2 e4`
 
 To exit the application, type `quit`.
 
