@@ -14,9 +14,9 @@ def main():
     print("Hello, Chess World!")
     print("Here's a 2D representation of a chessboard:")
     print()
-    
-    # Generate and display an 8x8 chessboard
-    chessboard = generate_chessboard()
+
+    # Generate and display an 8x8 chessboard with pieces
+    chessboard = generate_chessboard(with_pieces=True)
     display_chessboard(chessboard)
 
 
