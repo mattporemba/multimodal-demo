@@ -101,7 +101,11 @@ def display_chessboard(chessboard):
         # Row number (8 to 1 from top to bottom)
         row_num = size - i
         # Pad each element to have the same width
-        padded_row = [f"{cell:{max_width}s}" for cell in row]
+        padded_row = []
+        for cell in row:
+            # Convert cell to string if it's not already a string
+            cell_str = str(cell)
+            padded_row.append(f"{cell_str:{max_width}s}")
         print(f"{row_num} {' '.join(padded_row)} {row_num}")
 
     # Column labels again at the bottom

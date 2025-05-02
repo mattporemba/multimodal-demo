@@ -50,7 +50,25 @@ You can also run the main function directly without installation:
 python main.py
 ```
 
-This will display a standard 8x8 chessboard in the terminal.
+This will display a standard 8x8 chessboard in the terminal with chess pieces in their starting positions.
+
+### Controlling the Chessboard
+
+Once the chessboard is displayed, you can move pieces by entering commands in the format:
+
+```
+<from_position> <to_position>
+```
+
+For example:
+- To move a pawn from a2 to a4, enter: `a2 a4`
+- To move a knight from b1 to c3, enter: `b1 c3`
+
+The positions use standard chess notation:
+- Columns are labeled a through h (from left to right)
+- Rows are numbered 1 through 8 (from bottom to top)
+
+To exit the application, type `quit`.
 
 ### Using as a module
 
@@ -83,10 +101,14 @@ pytest
 chessboard/
 ├── chessboard/
 │   ├── __init__.py
-│   └── chessboard.py
+│   ├── chessboard.py
+│   ├── chess_piece.py
+│   └── game_controller.py
 ├── tests/
 │   ├── __init__.py
-│   └── test_chessboard.py
+│   ├── test_chessboard.py
+│   ├── test_chess_piece.py
+│   └── test_game_controller.py
 ├── main.py
 ├── setup.py
 └── requirements.txt
