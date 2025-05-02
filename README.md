@@ -1,17 +1,23 @@
 # Chessboard
 
-A simple Python application that prints a 2D representation of a chessboard.
+Track the state of a chessboard in a terminal using Unicode with a video live stream from a phone.
 
-## Description
+## Goals
 
-This application generates and displays a 2D representation of a chessboard in the terminal. The chessboard is represented using Unicode characters, with '□' for white squares and '■' for black squares.
+1. Explore Google's Live API.
+2. Track the board state of a chess game.
+3. Use a phone camera to capture the game. Images at first, then live video.
+4. Test bandwidth and latency of the phone camera.
+5. Test costs of using the Live API and streaming video.
+6. Explore efficiency options: segment video locally and extract only relevant frames.
+7. Explore voice generation in broadcast.
+   See [NEXT ping pong demo](https://github.com/GoogleCloudDevRel/next25-retro-ping-pong)
 
-## Features
+## Architecture
 
-- Generate a standard 8x8 chessboard
-- Support for custom-sized chessboards
-- Clean, modular code structure
-- Comprehensive unit tests
+(This is just a guess) A phone app will send pictures a GCP bucket, or livestream video to (??). That bucket/video is
+processed by Gemini. Gemini will identify what two board locations changed: where the piece moved from and to.
+Programmatically determine the state of the board off of the changes observed to track what pieces are where.
 
 ## Installation
 
