@@ -86,6 +86,10 @@ def display_chessboard(chessboard):
     Args:
         chessboard (list): A 2D list representing the chessboard.
     """
+    # Add 5 lines of whitespace before displaying the board
+    for _ in range(5):
+        print()
+
     size = len(chessboard)
 
     # Find the maximum width of any piece representation

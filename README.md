@@ -103,6 +103,15 @@ To run the tests, use pytest:
 pytest
 ```
 
+### Debug Commands
+
+For testing purposes, the following debug commands are available:
+
+- `debug checkmate`: Sets up the board in a near-checkmate scenario; with black's move of `a3 g3` the white king 
+  trapped at h1.
+- `debug check`: Sets up a board in a near-check scenario; with black's move of `d4 c3` the white king is in check 
+  at e1.
+
 ## Project Structure
 
 ```
